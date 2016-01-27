@@ -3,61 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
+    <!-- Inherit defaults from Spring Boot -->
     <parent>
-        <artifactId>exams-system-parent</artifactId>
-        <groupId>com.online</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.1.RELEASE</version>
     </parent>
-
-    <name>exams-system-passport</name>
-    <artifactId>exams-system-passport</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-
-    <build>
-        <finalName>exams-system-passport</finalName>
-        <filters>
-            <filter>src/filters/${project.environment}.properties</filter>
-        </filters>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-=======
 
     <groupId>com.online</groupId>
     <artifactId>exams-system-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <!--    <distributionManagement>
-            <repository>
-                <id>releases</id>
-                <name>Release Repository</name>
-                <url>http://nexus.corp.36kr.com/nexus/content/repositories/releases/
-                </url>
-            </repository>
-            <snapshotRepository>
-                <id>snapshots</id>
-                <name>Snapshot Repository</name>
-                <url>http://nexus.corp.36kr.com/nexus/content/repositories/snapshots/
-                </url>
-            </snapshotRepository>
-
-        </distributionManagement>-->
-
     <properties>
         <!-- system env -->
         <project.environment>dev</project.environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <servlet-api.version>3.0.1</servlet-api.version>
         <jsp.version>2.1</jsp.version>
         <javax.inject>1</javax.inject>
 
         <!-- spring -->
-        <spring.version>4.1.3.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <spring-data-solr.version>1.3.1.RELEASE</spring-data-solr.version>
         <aspectj.version>1.8.4</aspectj.version>
         <aopalliance.version>1.0.0</aopalliance.version>
@@ -75,7 +42,6 @@
         <jdom.version>1.0.0</jdom.version>
         <jdom2.version>2.0.5</jdom2.version>
         <dom4j.version>1.6.1</dom4j.version>
-        <xstream.version>1.4.7</xstream.version>
 
         <!-- Template Engine -->
         <freemarker.version>2.3.21</freemarker.version>
@@ -162,29 +128,10 @@
                 <directory>src/main/resources</directory>
                 <excludes>
                 </excludes>
->>>>>>> b800ddf13d25dda0012b0843f07b6fdd6fe7e873
             </resource>
         </resources>
         <plugins>
             <plugin>
-<<<<<<< HEAD
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <descriptors>
-                        <descriptor>assembly.xml</descriptor>
-                    </descriptors>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <finalName>dist</finalName>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-=======
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.7</version>
@@ -212,41 +159,12 @@
                         <phase>deploy</phase>
                         <goals>
                             <goal>jar</goal>
->>>>>>> b800ddf13d25dda0012b0843f07b6fdd6fe7e873
                         </goals>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-<<<<<<< HEAD
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <!-- 嵌入式服务器 -->
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.0.M2</version>
-                <configuration>
-                    <httpConnector>
-                        <port>9081</port>
-                    </httpConnector>
-                    <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
-                    <!-- 每2秒的间隔扫描一次,实现热部署 -->
-                    <reload>automatic</reload>
-                    <webAppConfig>
-                        <contextPath>/</contextPath>
-                    </webAppConfig>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
-=======
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
@@ -270,16 +188,15 @@
             <!-- 子组件-->
             <dependency>
                 <groupId>com.online</groupId>
-                <artifactId>exams-system-common</artifactId>
+                <artifactId>exams-system-passport</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.online</groupId>
-                <artifactId>exams-system-passport</artifactId>
+                <artifactId>exams-system-core</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
-
-            <!-- spring 套件 -->
+            <!-- spring 套件
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-framework-bom</artifactId>
@@ -298,6 +215,7 @@
                 <artifactId>spring-rabbit</artifactId>
                 <version>${spring-rabbit.version}</version>
             </dependency>
+            -->
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
@@ -314,37 +232,21 @@
                 <version>${aspectj.version}</version>
             </dependency>
 
-            <!--spring-boot-->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-releasetrain</artifactId>
-                <version>Fowler-SR2</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.3.1.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- 由于mongdb配置版本的需求 data-common手动配置 -->
+            <!-- 由于mongdb配置版本的需求 data-common手动配置
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
                 <version>${spring-data-commons.version}</version>
             </dependency>
-
-            <!-- mongoDB spring conf -->
+-->
+            <!-- mongoDB spring conf
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
                 <version>${spring-data-mongodb.version}</version>
             </dependency>
-
-            <!-- Spring Data Redis -->
+-->
+            <!-- Spring Data Redis
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
@@ -355,7 +257,7 @@
                 <artifactId>jedis</artifactId>
                 <version>${redis-clients.version}</version>
             </dependency>
-
+ -->
             <!-- jee -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -380,6 +282,7 @@
                 <artifactId>javax.inject</artifactId>
                 <version>${javax.inject}</version>
             </dependency>
+
             <!--validation-->
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -418,6 +321,7 @@
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
             </dependency>
+
             <!-- mybatis/spring包 -->
             <dependency>
                 <groupId>org.mybatis</groupId>
@@ -459,11 +363,6 @@
             <!-- JSON 结束 -->
 
             <!-- XML 解析相关 开始 -->
-            <dependency>
-                <groupId>com.thoughtworks.xstream</groupId>
-                <artifactId>xstream</artifactId>
-                <version>${xstream.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.jdom</groupId>
                 <artifactId>jdom</artifactId>
@@ -705,11 +604,6 @@
                 <version>${hamcrest-core.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.thoughtworks.xstream</groupId>
-                <artifactId>xstream</artifactId>
-                <version>${xstream.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.googlecode.libphonenumber</groupId>
                 <artifactId>libphonenumber</artifactId>
                 <version>${libphonenumber.version}</version>
@@ -838,6 +732,7 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
+            <version>${xstream.version}</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.libphonenumber</groupId>
@@ -864,6 +759,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
->>>>>>> b800ddf13d25dda0012b0843f07b6fdd6fe7e873
 </project>
