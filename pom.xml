@@ -19,6 +19,7 @@
         <!-- system env -->
         <exams-system-core.version>1.1-SNAPSHOT</exams-system-core.version>
         <exams-system-passport.version>1.1-SNAPSHOT</exams-system-passport.version>
+        <generator-tool.version>1.0-SNAPSHOT</generator-tool.version>
         <project.environment>dev</project.environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <servlet-api.version>3.0.1</servlet-api.version>
@@ -195,6 +196,11 @@
                 <groupId>com.online</groupId>
                 <artifactId>exams-system-core</artifactId>
                 <version>${exams-system-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.online</groupId>
+                <artifactId>generator-tool</artifactId>
+                <version>${generator-tool.version}</version>
             </dependency>
             <!-- spring 套件
             <dependency>
