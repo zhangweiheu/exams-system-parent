@@ -18,9 +18,9 @@
     <properties>
         <!-- system env -->
         <exams-system-core.version>1.1-SNAPSHOT</exams-system-core.version>
-        <exams-system-passport.version>1.1-SNAPSHOT</exams-system-passport.version>
+        <exams-system-webapp.version>1.1-SNAPSHOT</exams-system-webapp.version>
         <generator-tool.version>1.0-SNAPSHOT</generator-tool.version>
-        <qi_niu.version>7.0.0</qi_niu.version>
+        <qi-niu.version>7.0.0</qi-niu.version>
         <project.environment>dev</project.environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <servlet-api.version>3.0.1</servlet-api.version>
@@ -190,8 +190,8 @@
             <!-- 子组件-->
             <dependency>
                 <groupId>com.online</groupId>
-                <artifactId>exams-system-passport</artifactId>
-                <version>${exams-system-passport.version}</version>
+                <artifactId>exams-system-webapp</artifactId>
+                <version>${exams-system-webapp.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.online</groupId>
@@ -206,7 +206,7 @@
             <dependency>
                 <groupId>com.qiniu</groupId>
                 <artifactId>qiniu-java-sdk</artifactId>
-                <version>${qi_niu.version}</version>
+                <version>${qi-niu.version}</version>
             </dependency>
             <!-- spring 套件
             <dependency>
