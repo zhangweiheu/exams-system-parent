@@ -12,13 +12,12 @@
 
     <groupId>com.online</groupId>
     <artifactId>exams-system-parent</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
 
     <properties>
         <!-- system env -->
-        <exams-system-core.version>1.1-SNAPSHOT</exams-system-core.version>
-        <exams-system-webapp.version>1.1-SNAPSHOT</exams-system-webapp.version>
+        <exams-system-core.version>1.2</exams-system-core.version>
         <generator-tool.version>1.0-SNAPSHOT</generator-tool.version>
         <qi-niu.version>7.0.0</qi-niu.version>
         <project.environment>dev</project.environment>
