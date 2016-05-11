@@ -12,12 +12,12 @@
 
     <groupId>com.online</groupId>
     <artifactId>exams-system-parent</artifactId>
-    <version>1.2</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
         <!-- system env -->
-        <exams-system-core.version>1.2</exams-system-core.version>
+        <exams-system-core.version>2.0-SNAPSHOT</exams-system-core.version>
         <generator-tool.version>1.0-SNAPSHOT</generator-tool.version>
         <qi-niu.version>7.0.0</qi-niu.version>
         <project.environment>dev</project.environment>
@@ -678,6 +678,10 @@
                 <!--<artifactId>tomcat-embed-jasper</artifactId>-->
                 <!--<version>8.5.0</version>-->
             <!--</dependency>-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>springloaded</artifactId>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
